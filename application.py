@@ -1,3 +1,4 @@
+import os
 import re
 import settings
 
@@ -13,9 +14,12 @@ idreq = idgen['idreq']
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = 'SOME_SECURE_STRING'
-app.debug = True
 app.config['RECAPTCHA_PUBLIC_KEY'] = "RECAPTCH_PUBLIC_KEY"
 app.config['RECAPTCHA_PRIVATE_KEY'] = "RECAPTCH_PRIVATE_KEY"
+
+# DEVELOPMENT STATUS
+if os.environ.get("DEVELOPMENT"):
+    app.debug = True
 
 
 def password_validator(form, field):
@@ -38,7 +42,7 @@ class Registration(Form):
         validators.EqualTo('confirm', message="Passwords must match"),
         password_validator])
     confirm = PasswordField('Confirm: ', [password_validator])
-    # recaptcha = RecaptchaField()
+    recaptcha = RecaptchaField()
 
 
 @app.route('/', methods=['GET', 'POST'])
