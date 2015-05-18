@@ -45,13 +45,13 @@ class Registration(Form):
 def index():
     form = Registration()
     if request.method == 'POST':
-        print(form.data)
         try:
             form.validate_on_submit()
 
             apple_id = form.data['apple_id']
             password = form.data['password']
 
+            # Write data to database
             idreq.update({'apple_id': apple_id},
                          {'apple_id': apple_id,
                           'password': password},
