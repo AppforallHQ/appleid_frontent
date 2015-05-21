@@ -94,6 +94,16 @@
 	box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.1);
 	outline:none;
 }
+.PROJECT2-page .mod-box input[type=text].error,
+.PROJECT2-page .mod-box input[type=password].error,
+.PROJECT2-page .mod-box input[type=email].error {
+    border-color: #ef7474;
+}
+.PROJECT2-page .mod-box input[type=text].success,
+.PROJECT2-page .mod-box input[type=password].success,
+.PROJECT2-page .mod-box input[type=email].success {
+    border-color: #47d057;
+}
 .PROJECT2-page .mod-box .captcha-img {
 	float:right;
 	margin-left:10px
@@ -180,6 +190,14 @@
 	cursor:pointer;
 	background:#007aff
 }
+
+.form-submit:disabled,
+.form-submit:disabled:hover {
+    background: #cfcfcf;
+    color: #707070;
+    cursor: auto;
+}
+
 .form-submit:hover {
 	background:#0066ff;
 	color:#fff;

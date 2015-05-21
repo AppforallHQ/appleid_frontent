@@ -23,7 +23,7 @@
 		<link href="css/style-single.css" media="all" type="text/css" rel="stylesheet">
 
 		<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
-		<script src="/js/analytics.js"></script>
+		<script src="js/analytics.js"></script>
 		<script src="js/formsubmit.js"></script>
 
 		<script src="https://www.PROJECT.ir/js/script.js"></script>
@@ -56,9 +56,9 @@
 		
 		<section class="content">
 			<section class="single-page-body PROJECT2-page">
-				<div class="page-title">ساخت Apple ID</div>
+				<div class="page-title">ساخت Apple ID رایگان</div>
 				<div class="page-body">
-					<h2>کاربر گرامی<br>برای دریافت Apple ID خود، فرم زیر را پر کرده و برای ما ارسال کنید. در اولین فرصت اطلاعات Apple ID به ایمیل شما ارسال خواهد شد.</h2>
+					<h2>کاربر گرامی<br>برای دریافت Apple ID خود، فرم زیر را پر کرده و برای ما ارسال کنید. تا دقایقی دیگر اطلاعات Apple ID به ایمیل شما ارسال خواهد شد.</h2>
 					<section class="form-col">
 						<form id="apple_id_req" method="POST" action="/">
 							<div class="row">
@@ -70,15 +70,17 @@
 								<div class="row"><label>پسورد :</label>{{ form.password() }}</div>
 								<div class="row"><label>تکرار پسورد :</label>{{ form.confirm() }}</div>
 								<div class="row">{{ form.recaptcha }}</div>
-								<div class="row"><input type="submit" class="form-submit" value="ثبت درخواست"></div>
+								<div class="row"><input type="submit" class="form-submit" value="ثبت درخواست" disabled="true"></div>
 							</div>
 						</form>
 					</section>
 
 					<div class="left-col">
 						<div class="psss-info-box">
-							<h2>قبل از انتخاب پسورد به نکات زیر توجه کید:</h2>
+							<h2>قبل از انتخاب پسورد به نکات زیر توجه کنید:</h2>
 							<ul>
+								<!-- TODO remove once we get different set of rules from DS -->
+								<li id="min_eight_characters" class="">حداقل 8 کاراکتر داشته باشد</li>
 								<!-- TODO remove once we get different set of rules from DS -->
 								<li id="one_lower" class="">حداقل دارای یک حرف کوچک انگلیسی باشد</li>
 								<!-- TODO remove once we get different set of rules from DS -->
@@ -86,11 +88,9 @@
 								<!-- TODO remove once we get different set of rules from DS -->
 								<li id="one_number" class="">حداقل دارای یک عدد باشد</li>
 								<!-- TODO remove once we get different set of rules from DS -->
-								<li id="three_indentical" class="">نباید بیش از دو حرف یکسان متوالی باشد</li>
+								<li id="three_indentical" class="">نباید بیش از دو حرف یکسان متوالی داشته باشد</li>
 								<!-- TODO remove once we get different set of rules from DS -->
 								<li id="passwords_must_match" class="">همانند نام اپل آی دی نباشد</li>
-								<!-- TODO remove once we get different set of rules from DS -->
-								<li id="min_eight_characters" class="">حداقل 8 کاراکتر داشته باشد</li>
 								<!-- TODO remove once we get different set of rules from DS -->
 								<li id="common_password" class="">جزء رمز‌های معروف نباشد</li>
 							</ul>
