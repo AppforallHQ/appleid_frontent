@@ -16,7 +16,7 @@ app = Flask(__name__, static_url_path='')
 app.secret_key = 'SOME_SECURE_STRING'
 app.config['RECAPTCHA_PUBLIC_KEY'] = "RECAPTCH_PUBLIC_KEY"
 app.config['RECAPTCHA_PRIVATE_KEY'] = "RECAPTCH_PRIVATE_KEY"
-
+app.config['RECAPTCHA_PARAMETERS'] = {'hl': 'fa'}
 # DEVELOPMENT STATUS
 if os.environ.get("DEVELOPMENT"):
     app.debug = True

@@ -23,13 +23,14 @@
 		<link href="css/style-single.css" media="all" type="text/css" rel="stylesheet">
 
 		<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+		<script src="/js/analytics.js"></script>
+		<script src="js/formsubmit.js"></script>
+
 		<script src="https://www.PROJECT.ir/js/script.js"></script>
 		<!--[if lte IE 8]>
 		<script src="https://www.PROJECT.ir/js/html5shiv.js" type="text/javascript"></script>
 		<link href="https://www.PROJECT.ir/css/style-ie.css" media="all" type="text/css" rel="stylesheet">
 		<![endif]-->
-		<script src="/js/analytics.js"></script>
-		<script src="js/formsubmit.js"></script>
 	</head>
 	<body class="single">
 		<header>
@@ -61,8 +62,8 @@
 					<section class="form-col">
 						<form id="apple_id_req" method="POST" action="/">
 							<div class="row">
-								<div class="slide-error" style="display:">متاسفانه در ثبت درخواست شما مشکلی رخ داده. لطفا پس از تطبیق شرایط اطلاعات مورد نیاز‌، دوباره اقدام نمایید. </div>
-								<div class="slide-success" style="display:">درخواست شما با موفقیت ثبت شد. به زودی ایمیل حاوی اطلاعات ثبت نام برای شما ارسال خواهد شد.</div>
+								<div class="slide-error" style="display: none">متاسفانه در ثبت درخواست شما مشکلی رخ داده. لطفا پس از تطبیق شرایط اطلاعات مورد نیاز‌، دوباره اقدام نمایید. </div>
+								<div class="slide-success" style="display: none">درخواست شما با موفقیت ثبت شد. به زودی ایمیل حاوی اطلاعات ثبت نام برای شما ارسال خواهد شد.</div>
 							</div>
 							<div class="mod-box">
 								<div class="row"><label>ایمیل :</label>{{ form.apple_id(size=20) }}</div>

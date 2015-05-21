@@ -4,17 +4,22 @@ $(document).ready(function(){
 
 	var postData = $(this).serializeArray();
 	var formURL = $(this).attr("action");
+	
 	$.ajax({
 	    url: formURL,
 	    type: "POST",
 	    data: postData,
 	    success: function(response)
 	    {
-		console.log(response);
+		if(response.done == true){
+		    $('.slide-success').show();
+		} else {
+		    $('.slide-error').show();
+		}
 	    },
 	    error: function(response)
 	    {
-		console.log(response);
+		$('.slide-error').show();
 	    }
 	});
     });
