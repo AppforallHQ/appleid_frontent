@@ -44,7 +44,29 @@ function error_field(obj){
     $(obj).addClass('error');
 }
 
+function form_clean_up(){
+    // Clean up the form
+    $('#apple_id').val('');
+    $('#password').val('');
+    $('#confirm').val('');
+
+    $('#apple_id_req .form-submit').attr('disabled', true);
+}
+
+function fadeOutErrorAlert(){
+    setTimeout(function(){
+	$('.slide-error').fadeOut();
+    },5000);
+}
+
+function fadeOutSuccessAlert(){
+    setTimeout(function(){
+	$('.slide-success').fadeOut();
+    },5000);
+}
+
 $(document).ready(function(){
+    form_clean_up();
 
     $('#apple_id_req input').keyup(function(){
 	// Check form data in every keypress
@@ -91,14 +113,18 @@ $(document).ready(function(){
 	    success: function(response)
 	    {
 		if(response.done == true){
+		    form_clean_up();
 		    $('.slide-success').show();
+		    fadeOutSuccessAlert();
 		} else {
 		    $('.slide-error').show();
+		    fadeOutErrorAlert();
 		}
 	    },
 	    error: function(response)
 	    {
 		$('.slide-error').show();
+		fadeOutErrorAlert();
 	    }
 	});
     });

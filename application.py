@@ -4,9 +4,10 @@ import settings
 
 from pymongo import MongoClient
 from flask import Flask, render_template, request, jsonify
-from flask_wtf import Form, RecaptchaField
 from wtforms import PasswordField, validators
 from wtforms.fields.html5 import EmailField
+from flask.ext.wtf import Form
+from flask.ext.wtf.recaptcha import RecaptchaField
 
 dbcon = MongoClient(settings.MONGODB_HOST, settings.MONGODB_PORT)
 idgen = dbcon['idgen']
@@ -49,9 +50,7 @@ class Registration(Form):
 def index():
     form = Registration()
     if request.method == 'POST':
-        try:
-            form.validate_on_submit()
-
+        if form.validate_on_submit():
             apple_id = form.data['apple_id']
             password = form.data['password']
 
@@ -60,12 +59,10 @@ def index():
                          {'apple_id': apple_id,
                           'password': password},
                          upsert=True)
-
             return jsonify(done=True)
-        except:
+        else:
             return jsonify(done=False)
-    else:
-        return render_template('index.html', form=form)
+    return render_template('index.html', form=form)
 
 if __name__ == '__main__':
     app.run()
