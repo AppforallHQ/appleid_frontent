@@ -53,6 +53,10 @@ function form_clean_up(){
     $('#apple_id_req .form-submit').attr('disabled', true);
 }
 
+function run_loader(){
+    $('#loader').show('');
+}
+
 function fadeOutErrorAlert(){
     setTimeout(function(){
 	$('.slide-error').fadeOut();
@@ -110,19 +114,23 @@ $(document).ready(function(){
 	    url: formURL,
 	    type: "POST",
 	    data: postData,
+	    beforeSend: run_loader(),
 	    success: function(response)
 	    {
 		if(response.done == true){
+		    $('#loader').hide();
 		    form_clean_up();
 		    $('.slide-success').show();
 		    fadeOutSuccessAlert();
 		} else {
+		    $('#loader').hide();
 		    $('.slide-error').show();
 		    fadeOutErrorAlert();
 		}
 	    },
 	    error: function(response)
 	    {
+		$('#loader').hide();
 		$('.slide-error').show();
 		fadeOutErrorAlert();
 	    }
