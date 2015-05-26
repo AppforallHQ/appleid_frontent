@@ -21,7 +21,7 @@
 }
 .single-page-body .page-title{
 	font-family:roya, Arial, Helvetica, sans-serif;
-	margin:20px 20px 30px 20px;
+	margin:20px 40px 30px 40px;
 	font-size:2em;
 	padding-bottom:10px;
 	color:#555;
@@ -30,7 +30,7 @@
 .single-page-body.PROJECT2-page {
 }
 .PROJECT2-page .page-body {
-	margin: 0 20px;
+	margin: 0 40px;
 	overflow: hidden;
 }
 .PROJECT2-page h2 {
@@ -52,7 +52,7 @@
 	color:#444;
 	float: right;
 	margin-bottom:5px;
-	width: 100px;
+	width: 90px;
 }
 .PROJECT2-page .mod-box input[type=text],
 .PROJECT2-page .mod-box input[type=password],
@@ -129,16 +129,22 @@
 }
 .left-col .psss-info-box {
 	padding:10px;
-	overflow: hidden;
 	border: 1px solid #e0e0e0;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
 }
+.left-col .psss-info-box legend {
+	text-align: center;
+	font-size:18px;
+	font-family:yekan, Arial, tahoma, sans-serif;
+	color:#777;
+	padding: 0 20px 3px 20px;
+}
 .left-col .psss-info-box h2 {
 	font-size:18px;
 	font-family:roya, Arial, tahoma, sans-serif;
-	color:#444;
+	color:#666;
 }
 
 
@@ -276,5 +282,15 @@
 .PROJECT2-page .form-submit {
 	float:none;
 	margin:0 auto;
+}
+.PROJECT2-page .page-body {
+	margin: 0 20px;
+	overflow: hidden;
+}
+.form-col {
+	width: 100%;
+}
+.left-col {
+	width: 100%;
 }
 }
