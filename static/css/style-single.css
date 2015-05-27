@@ -19,15 +19,15 @@
 	box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
 	padding:0 0 20px 0;
 }
-.single-page-body .page-title{
+.single-page-body.PROJECT2-page {
+}
+.PROJECT2-page .page-title {
 	font-family:roya, Arial, Helvetica, sans-serif;
 	margin:20px 40px 30px 40px;
 	font-size:2em;
 	padding-bottom:10px;
 	color:#555;
 	border-bottom:1px solid #e0e0e0
-}
-.single-page-body.PROJECT2-page {
 }
 .PROJECT2-page .page-body {
 	margin: 0 40px;
@@ -111,11 +111,11 @@
 .PROJECT2-page .mod-box input.captcha-input {
 	width:100px;
 }
-.form-col {
+.PROJECT2-page .form-col {
 	width: 50%;
 	float: right;
 }
-.left-col {
+.PROJECT2-page .left-col {
 	margin-top: 20px;
 	width: 50%;
 	float: right;
@@ -123,25 +123,25 @@
 	font-family:roya, Arial, tahoma, sans-serif;
 	color:#444;
 }
-.left-col ul li {
+.PROJECT2-page .left-col ul li {
 	list-style: circle inside;
 	color: #777;
 }
-.left-col .psss-info-box {
+.PROJECT2-page .left-col .psss-info-box {
 	padding:10px;
 	border: 1px solid #e0e0e0;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
 }
-.left-col .psss-info-box legend {
+.PROJECT2-page .left-col .psss-info-box legend {
 	text-align: center;
 	font-size:18px;
 	font-family:yekan, Arial, tahoma, sans-serif;
 	color:#777;
 	padding: 0 20px 3px 20px;
 }
-.left-col .psss-info-box h2 {
+.PROJECT2-page .left-col .psss-info-box h2 {
 	font-size:18px;
 	font-family:roya, Arial, tahoma, sans-serif;
 	color:#666;
@@ -149,7 +149,7 @@
 
 
 
-.slide-error{
+.PROJECT2-page .slide-error{
 	border:1px solid #ef7474;
 	background:#fbf2f2;
 	color:#c90e0e;
@@ -162,7 +162,7 @@
 	font-family:roya, arial, Helvetica, sans-serif;
 	margin: 20px;
 }
-.slide-success{
+.PROJECT2-page .PROJECT2-page .slide-success{
 	border:1px solid #47d057;
 	background:#f3fbf2;
 	color:#3a7d42;
@@ -176,7 +176,7 @@
 	margin: 20px;
 }
 
-.form-submit {
+.PROJECT2-page .form-submit {
 	display:block;
 	padding:5px 50px;
 	float:right;
@@ -197,14 +197,14 @@
 	background:#007aff
 }
 
-.form-submit:disabled,
-.form-submit:disabled:hover {
+.PROJECT2-page .form-submit:disabled,
+.PROJECT2-page .form-submit:disabled:hover {
     background: #cfcfcf;
     color: #707070;
     cursor: auto;
 }
 
-.form-submit:hover {
+.PROJECT2-page .form-submit:hover {
 	background:#0066ff;
 	color:#fff;
 }
@@ -287,10 +287,10 @@
 	margin: 0 20px;
 	overflow: hidden;
 }
-.form-col {
+.PROJECT2-page .form-col {
 	width: 100%;
 }
-.left-col {
+.PROJECT2-page .left-col {
 	width: 100%;
 }
 }
