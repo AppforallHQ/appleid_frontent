@@ -17,10 +17,8 @@ app.config['RECAPTCHA_PARAMETERS'] = {'hl': 'fa'}
 # DEVELOPMENT STATUS
 if os.environ.get("DEVELOPMENT"):
     app.debug = True
-    dbcon = MongoClient('localhost', 27017)
-else:
-    dbcon = MongoClient(settings.MONGODB_HOST, settings.MONGODB_PORT)
 
+dbcon = MongoClient(settings.MONGODB_HOST, settings.MONGODB_PORT)
 idgen = dbcon['idgen']
 idreq = idgen['idreq']
 
