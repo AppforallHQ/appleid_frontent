@@ -9,6 +9,10 @@ from wtforms.fields.html5 import EmailField
 from flask.ext.wtf import Form
 from flask.ext.wtf.recaptcha import RecaptchaField
 
+dbcon = MongoClient(settings.MONGODB_HOST, settings.MONGODB_PORT)
+idgen = dbcon['idgen']
+idreq = idgen['idreq']
+
 app = Flask(__name__, static_url_path='')
 app.secret_key = 'SOME_SECURE_STRING'
 app.config['RECAPTCHA_PUBLIC_KEY'] = "RECAPTCH_PUBLIC_KEY"
@@ -17,10 +21,6 @@ app.config['RECAPTCHA_PARAMETERS'] = {'hl': 'fa'}
 # DEVELOPMENT STATUS
 if os.environ.get("DEVELOPMENT"):
     app.debug = True
-
-dbcon = MongoClient(settings.MONGODB_HOST, settings.MONGODB_PORT)
-idgen = dbcon['idgen']
-idreq = idgen['idreq']
 
 
 def password_validator(form, field):
