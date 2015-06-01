@@ -60,7 +60,7 @@
 	border:1px solid #d8d8d8;
 	background:#fff;
 	width:100%;
-	max-width:300px;
+	max-width:302px;
 	padding:7px 10px;
 	direction:ltr;
 	display:inline-block;
@@ -114,9 +114,14 @@
 .PROJECT2-page .form-col {
 	width: 50%;
 	float: right;
+	position: relative;
+	margin-top: 20px;
+}
+.PROJECT2-page .form-col .g-recaptcha {
+	margin-right: 90px;
 }
 .PROJECT2-page .left-col {
-	margin-top: 20px;
+	margin-top: 25px;
 	width: 50%;
 	float: right;
 	font-size:15px;
@@ -160,9 +165,9 @@
 	text-align:right;
 	padding:4px 10px;
 	font-family:roya, arial, Helvetica, sans-serif;
-	margin: 20px;
+	margin: 20px 0 10px 20px;
 }
-.PROJECT2-page .PROJECT2-page .slide-success{
+.PROJECT2-page .slide-success{
 	border:1px solid #47d057;
 	background:#f3fbf2;
 	color:#3a7d42;
@@ -173,13 +178,15 @@
 	text-align:right;
 	padding:4px 10px;
 	font-family:roya, arial, Helvetica, sans-serif;
-	margin: 20px;
+	margin: 20px 0 10px 20px;
 }
 
 .PROJECT2-page .form-submit {
 	display:block;
 	padding:5px 50px;
 	float:right;
+	width: 302px;
+	margin-right: 90px;
 	color:#fff;
 	line-height:130%;
 	border:none;
@@ -207,6 +214,14 @@
 .PROJECT2-page .form-submit:hover {
 	background:#0066ff;
 	color:#fff;
+}
+.form-loader {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(255,255,255,0.5) url(' ../images/ajax_loader.gif') no-repeat center;
 }
 
 
@@ -270,14 +285,17 @@
 
 
 @media (max-width: 800px) {
-.single-page-body {
+.PROJECT2-page {
 	padding:0;
 	padding-bottom:20px;
 	margin-top:80px;
 }
-.single-page-body .page-title{
+.PROJECT2-page .page-title{
 	margin:10px;
 	text-align:center;
+}
+.PROJECT2-page .form-col .g-recaptcha {
+	margin: 0 auto;
 }
 .PROJECT2-page .form-submit {
 	float:none;
