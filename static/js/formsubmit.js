@@ -54,7 +54,7 @@ function form_clean_up(){
 }
 
 function run_loader(){
-    $('#loader').show('');
+    $('#loader').fadeIn('');
 }
 
 function fadeOutErrorAlert(){
@@ -118,19 +118,19 @@ $(document).ready(function(){
 	    success: function(response)
 	    {
 		if(response.done == true){
-		    $('#loader').hide();
+		    $('#loader').fadeOut();
 		    form_clean_up();
 		    $('.slide-success').show();
 		    fadeOutSuccessAlert();
 		} else {
-		    $('#loader').hide();
+		    $('#loader').fadeOut();
 		    $('.slide-error').show();
 		    fadeOutErrorAlert();
 		}
 	    },
 	    error: function(response)
 	    {
-		$('#loader').hide();
+		$('#loader').fadeOut();
 		$('.slide-error').show();
 		fadeOutErrorAlert();
 	    }
