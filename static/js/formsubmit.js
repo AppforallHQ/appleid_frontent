@@ -50,8 +50,6 @@ function form_clean_up(){
     $('#password').val('');
     $('#confirm').val('');
 
-    // Reset recaptcha form
-    grecaptcha.reset();
     $('#apple_id_req .form-submit').attr('disabled', true);
 }
 
