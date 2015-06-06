@@ -128,6 +128,7 @@ $(document).ready(function(){
 		    $('.slide-error').show();
 		    fadeOutErrorAlert();
 		}
+		grecaptcha.reset();
 	    },
 	    error: function(response)
 	    {
@@ -135,6 +136,7 @@ $(document).ready(function(){
 		$('.slide-error').html(response.error);
 		$('.slide-error').show();
 		fadeOutErrorAlert();
+		grecaptcha.reset();
 	    }
 	});
     });
