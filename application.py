@@ -54,15 +54,22 @@ def index():
             apple_id = form.data['apple_id']
             password = form.data['password']
 
+            req_exists = idreq.find_one({'apple_id': apple_id, 'recoverable': 0})
+            if req_exists:
+                return jsonify(done=False, error="درخواست شما برای این شناسه ایمیل قبلا ثبت شده است.")
+            
             # Write data to database
             idreq.update({'apple_id': apple_id},
                          {'apple_id': apple_id,
                           'password': password,
-                          'retry': 0}, # System will try 3 times to create ID.
+                          # User is not allowed to register except we set it to 1
+                          'recoverable': 0,
+                          # System will try 3 times to create ID.
+                          'retry': 0},      
                          upsert=True)
             return jsonify(done=True)
         else:
-            return jsonify(done=False)
+            return jsonify(done=False, error="اطلاعات وارد شده برای درخواست نامعتبر است.")
     return render_template('index.html', form=form)
 
 if __name__ == '__main__':

@@ -124,6 +124,7 @@ $(document).ready(function(){
 		    fadeOutSuccessAlert();
 		} else {
 		    $('#loader').fadeOut();
+		    $('.slide-error').html(response.error);
 		    $('.slide-error').show();
 		    fadeOutErrorAlert();
 		}
@@ -131,6 +132,7 @@ $(document).ready(function(){
 	    error: function(response)
 	    {
 		$('#loader').fadeOut();
+		$('.slide-error').html(response.error);
 		$('.slide-error').show();
 		fadeOutErrorAlert();
 	    }
