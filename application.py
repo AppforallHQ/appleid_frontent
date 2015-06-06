@@ -57,7 +57,8 @@ def index():
             # Write data to database
             idreq.update({'apple_id': apple_id},
                          {'apple_id': apple_id,
-                          'password': password},
+                          'password': password,
+                          'retry': 0}, # System will try 3 times to create ID.
                          upsert=True)
             return jsonify(done=True)
         else:
