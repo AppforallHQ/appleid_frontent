@@ -24,6 +24,9 @@ app.config['RECAPTCHA_PARAMETERS'] = {'hl': 'fa'}
 # How many times an IP address can send request
 REQ_LIMIT = 3
 
+# Approved email providers list:
+EMAIL_PROVIDERS = ['gmail.com', 'outlook.com', 'yahoo.com', 'ymail.com', 'aol.com']
+
 # DEVELOPMENT STATUS
 if os.environ.get("DEVELOPMENT"):
     app.debug = True
@@ -39,11 +42,15 @@ def password_validator(form, field):
     consecutive_re = re.compile(r'(\w)\1{2,}')
     upass = field.data
     if not style_re.match(upass) or consecutive_re.match(upass):
-        raise
+        raise validators.ValidationError('Not a valid password')
 
+def email_validator(form, field):
+    provider = field.data.split('@')[-1].lower()
+    if provider not in EMAIL_PROVIDERS:
+        raise validators.ValidationError('Not a valid email provider')
 
 class Registration(Form):
-    apple_id = EmailField('Email address: ')
+    apple_id = EmailField('Email address: ', [email_validator])
     password = PasswordField('Password: ', [
         validators.Required(),
         validators.EqualTo('confirm', message="Passwords must match"),
