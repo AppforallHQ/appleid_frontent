@@ -25,7 +25,8 @@ app.config['RECAPTCHA_PARAMETERS'] = {'hl': 'fa'}
 REQ_LIMIT = 3
 
 # Approved email providers list:
-EMAIL_PROVIDERS = ['gmail.com', 'outlook.com', 'yahoo.com', 'ymail.com', 'aol.com']
+EMAIL_PROVIDERS = ['gmail.com', 'outlook.com', 'yahoo.com', 'ymail.com',
+                   'aol.com', 'me.com', 'icloud.com', 'mac.com']
 
 # DEVELOPMENT STATUS
 if os.environ.get("DEVELOPMENT"):

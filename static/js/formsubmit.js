@@ -1,5 +1,5 @@
 function validateEmail(email) {
-    var re = /^([\w-]+(?:\.[\w-]+)*)@(gmail.com|outlook.com|yahoo.com|ymail.com|aol.com)$/i;
+    var re = /^([\w-]+(?:\.[\w-]+)*)@(gmail.com|outlook.com|yahoo.com|ymail.com|aol.com|me.com|icloud.com|mac.com)$/i;
     return re.test(email);
 }
 
