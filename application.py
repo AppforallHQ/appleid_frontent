@@ -2,6 +2,7 @@ import os
 import re
 import settings
 
+from datetime import datetime
 from pymongo import MongoClient
 from flask import Flask, render_template, request, jsonify
 from wtforms import PasswordField, validators
@@ -12,12 +13,17 @@ from flask.ext.wtf.recaptcha import RecaptchaField
 dbcon = MongoClient(settings.MONGODB_HOST, settings.MONGODB_PORT)
 idgen = dbcon['idgen']
 idreq = idgen['idreq']
+reqip = idgen['reqip']
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = 'SOME_SECURE_STRING'
 app.config['RECAPTCHA_PUBLIC_KEY'] = "RECAPTCH_PUBLIC_KEY"
 app.config['RECAPTCHA_PRIVATE_KEY'] = "RECAPTCH_PRIVATE_KEY"
 app.config['RECAPTCHA_PARAMETERS'] = {'hl': 'fa'}
+
+# How many times an IP address can send request
+REQ_LIMIT = 3
+
 # DEVELOPMENT STATUS
 if os.environ.get("DEVELOPMENT"):
     app.debug = True
@@ -50,6 +56,17 @@ class Registration(Form):
 def index():
     form = Registration()
     if request.method == 'POST':
+        # Check IP to limit requests
+        user_ip = request.remote_addr
+        date = str(datetime.now().date())
+        ip_try_count = reqip.find_one({'ip': user_ip, 'date': date ,'count': {'$gte': REQ_LIMIT}})
+        if ip_try_count:
+            return jsonify(done=False, error="تعداد درخواست شما برای ثبت اپل‌آیدی از حد مجاز گذشته است.")
+
+        # Increment user try count for IP address per date
+        reqip.update({'ip':user_ip, 'date': date}, {'$set':{'ip': user_ip, 'date': date}, '$inc':{'count':1}}, True)
+
+        # Do form validation and submit request
         if form.validate_on_submit():
             apple_id = form.data['apple_id']
             password = form.data['password']
@@ -57,7 +74,6 @@ def index():
             req_exists = idreq.find_one({'apple_id': apple_id, 'recoverable': 0})
             if req_exists:
                 return jsonify(done=False, error="درخواست شما برای این شناسه ایمیل قبلا ثبت شده است.")
-            
             # Write data to database
             idreq.update({'apple_id': apple_id},
                          {'apple_id': apple_id,
@@ -67,6 +83,7 @@ def index():
                           # System will try 3 times to create ID.
                           'retry': 0},      
                          upsert=True)
+            
             return jsonify(done=True)
         else:
             return jsonify(done=False, error="اطلاعات وارد شده برای درخواست نامعتبر است.")
