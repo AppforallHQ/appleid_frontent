@@ -33,6 +33,15 @@ if os.environ.get("DEVELOPMENT"):
     app.debug = True
 
 
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+
 def password_validator(form, field):
     # At least one lower case character
     # At least one capital character
@@ -65,7 +74,7 @@ def index():
     form = Registration()
     if request.method == 'POST':
         # Check IP to limit requests
-        user_ip = request.remote_addr
+        user_ip = get_client_ip(request)
         date = str(datetime.now().date())
         ip_try_count = reqip.find_one({'ip': user_ip, 'date': date ,'count': {'$gte': REQ_LIMIT}})
         if ip_try_count:
