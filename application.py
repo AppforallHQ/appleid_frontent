@@ -75,7 +75,6 @@ def index():
     form = Registration()
     if request.method == 'POST':
         # Check IP to limit requests
-        print "HERE"
         user_ip = get_client_ip(request)
         date = str(datetime.now().date())
         ip_try_count = reqip.find_one({'ip': user_ip, 'date': date ,'count': {'$gte': REQ_LIMIT}})
