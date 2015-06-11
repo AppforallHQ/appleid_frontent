@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 import re
 import settings
@@ -34,11 +36,10 @@ if os.environ.get("DEVELOPMENT"):
 
 
 def get_client_ip(request):
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_forwarded_for:
-        ip = x_forwarded_for.split(',')[0]
+    if request.headers.getlist("X-Forwarded-For"):
+        ip = request.headers.getlist("X-Forwarded-For")[0]
     else:
-        ip = request.META.get('REMOTE_ADDR')
+        ip = request.remote_addr
     return ip
 
 
@@ -74,6 +75,7 @@ def index():
     form = Registration()
     if request.method == 'POST':
         # Check IP to limit requests
+        print "HERE"
         user_ip = get_client_ip(request)
         date = str(datetime.now().date())
         ip_try_count = reqip.find_one({'ip': user_ip, 'date': date ,'count': {'$gte': REQ_LIMIT}})
