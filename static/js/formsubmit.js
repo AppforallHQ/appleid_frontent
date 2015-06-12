@@ -128,7 +128,8 @@ $(document).ready(function(){
 		    $('.slide-error').show();
 		    fadeOutErrorAlert();
 		}
-		grecaptcha.reset();
+		Recaptcha.reload();
+		// grecaptcha.reset(); // New recaptcha
 	    },
 	    error: function(response)
 	    {
@@ -136,7 +137,8 @@ $(document).ready(function(){
 		$('.slide-error').html(response.error);
 		$('.slide-error').show();
 		fadeOutErrorAlert();
-		grecaptcha.reset();
+		Recaptcha.reload();
+		// grecaptcha.reset(); // New recaptcha
 	    }
 	});
     });

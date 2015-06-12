@@ -1,5 +1,6 @@
 Flask==0.10.1
 WTForms==2.0.2
-https://github.com/lepture/flask-wtf/archive/master.zip
+#https://github.com/lepture/flask-wtf/archive/master.zip
+flask-wtf==0.9.5
 pymongo==3.0.2
 gunicorn
