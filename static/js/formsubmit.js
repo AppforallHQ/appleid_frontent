@@ -18,6 +18,13 @@ var password_check = function(password){
     }
 };
 
+var check_captcha = function(captcha){
+    if(captcha.length > 2)
+	return true;
+    else
+	return false;
+};
+
 var password_confirm = function(password, confirm){
     if(password == confirm){
 	return true;
@@ -26,8 +33,8 @@ var password_confirm = function(password, confirm){
     }
 };
 
-var enable_submit = function(email, password, confirm){
-    if(validateEmail(email) && password_check(password) && password_confirm(password, confirm)){
+var enable_submit = function(email, password, confirm, captcha){
+    if(validateEmail(email) && password_check(password) && password_confirm(password, confirm) && check_captcha(captcha)){
 	$('#apple_id_req .form-submit').attr('disabled', false);
     } else {
 	$('#apple_id_req .form-submit').attr('disabled', true);
@@ -69,17 +76,28 @@ function fadeOutSuccessAlert(){
     },5000);
 }
 
-$(document).ready(function(){
-    form_clean_up();
-
+var bind_keyup = function(){
     $('#apple_id_req input').keyup(function(){
 	// Check form data in every keypress
 	var email = $('#apple_id').val();
 	var password = $('#password').val();
 	var confirm = $('#confirm').val();
-	enable_submit(email, password, confirm);
+	var captcha = $('#recaptcha_widget_div input[type=text]').val();
+	enable_submit(email, password, confirm, captcha);
     });
+};
 
+$(document).ready(function(){
+    form_clean_up();
+
+    var bound = false;
+    $("div.page-body").bind("DOMSubtreeModified", function() {
+	if($('#apple_id_req input').length == 7 && !bound){
+	    bound = true;
+	    bind_keyup();
+	}
+    });
+    
     $('#apple_id').change(function(){
 	if(validateEmail($(this).val())){
 	    succeed_field(this);
