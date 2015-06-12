@@ -28,7 +28,7 @@ REQ_LIMIT = 3
 
 # Approved email providers list:
 EMAIL_PROVIDERS = ['gmail.com', 'outlook.com', 'yahoo.com', 'ymail.com',
-                   'aol.com', 'me.com', 'icloud.com', 'mac.com']
+                   'aol.com', 'me.com', 'icloud.com', 'mac.com', 'live.com', 'hotmail.com']
 
 # DEVELOPMENT STATUS
 if os.environ.get("DEVELOPMENT"):
