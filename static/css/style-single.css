@@ -32,6 +32,7 @@
 .PROJECT2-page .page-body {
 	margin: 0 40px;
 	overflow: hidden;
+	position: relative;
 }
 .PROJECT2-page h2 {
 	font-size:1.125em;
@@ -60,7 +61,7 @@
 	border:1px solid #d8d8d8;
 	background:#fff;
 	width:100%;
-	max-width:302px;
+	max-width:300px;
 	padding:7px 10px;
 	direction:ltr;
 	display:inline-block;
@@ -104,21 +105,43 @@
 .PROJECT2-page .mod-box input[type=email].success {
     border-color: #47d057;
 }
-.PROJECT2-page .mod-box .captcha-img {
-	float:right;
-	margin-left:10px
-}
-.PROJECT2-page .mod-box input.captcha-input {
-	width:100px;
-}
 .PROJECT2-page .form-col {
 	width: 50%;
 	float: right;
-	position: relative;
 	margin-top: 20px;
 }
-.PROJECT2-page .form-col .g-recaptcha {
-	margin-right: 90px;
+.PROJECT2-page .form-col .recaptchatable {
+	border:0 !important;
+	margin-right: 83px !important;
+}
+.PROJECT2-page .form-col #recaptcha_image {
+	border:0 !important;
+}
+.PROJECT2-page .form-col #recaptcha_challenge_image {
+	border:1px solid #d8d8d8;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.PROJECT2-page .form-col #recaptcha_logo,
+.PROJECT2-page .form-col #recaptcha_privacy {
+	display: none
+}
+.PROJECT2-page .form-col #recaptcha_response_field {
+	border:1px solid #d8d8d8 !important;
+	max-width:300px !important;
+	padding:7px 10px !important;
+	-webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+	-webkit-transition: 300ms all linear;
+  -moz-transition: 300ms all linear;
+  transition: 300ms all linear;
+	outline:none;
+	margin-right: 7px !important;
 }
 .PROJECT2-page .left-col {
 	margin-top: 25px;
@@ -151,9 +174,6 @@
 	font-family:roya, Arial, tahoma, sans-serif;
 	color:#666;
 }
-
-
-
 .PROJECT2-page .slide-error{
 	border:1px solid #ef7474;
 	background:#fbf2f2;
@@ -185,7 +205,7 @@
 	display:block;
 	padding:5px 50px;
 	float:right;
-	width: 302px;
+	width: 300px;
 	margin-right: 90px;
 	color:#fff;
 	line-height:130%;
@@ -215,13 +235,29 @@
 	background:#0066ff;
 	color:#fff;
 }
-.form-loader {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: rgba(255,255,255,0.5) url(' ../images/ajax_loader.gif') no-repeat center;
+.PROJECT2-page .form-loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.8);
+  display: none;
+}
+.PROJECT2-page .form-loader span {
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+  background: #007aff url('../images/blue-ajax-loader.gif') no-repeat center;
+  -webkit-border-radius: 8px;
+  -moz-border-radius:    8px;
+  -ms-border-radius:     8px;
+  border-radius:         8px;
 }
 
 
@@ -251,37 +287,6 @@
 	color:#555;
 }
 
-.out-link-box {
-	font-family:roya, Arial, Helvetica, sans-serif;
-	font-size:19px;
-	text-align:center;
-	margin:20px 20px 0 20px;
-	padding:20px;
-	border:1px solid #eaeaea;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	-webkit-transition: 50ms all linear;
-    -moz-transition: 50ms all linear;
-    transition: 50ms all linear;
-	color:#666;
-}
-.out-link-box.yespage {
-	margin:20px 40px 0 40px;
-}
-.out-link-box a{
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:17px;
-	text-align:center;
-	color:#555;
-	padding-bottom:2px;
-	border-bottom:1px dashed #666;
-}
-.out-link-box a:hover{
-	color:#e71e1e;
-	border-bottom:1px dashed #e71e1e;
-}
-
 
 
 @media (max-width: 800px) {
@@ -293,9 +298,6 @@
 .PROJECT2-page .page-title{
 	margin:10px;
 	text-align:center;
-}
-.PROJECT2-page .form-col .g-recaptcha {
-	margin: 0 auto;
 }
 .PROJECT2-page .form-submit {
 	float:none;
@@ -310,5 +312,8 @@
 }
 .PROJECT2-page .left-col {
 	width: 100%;
+}
+.PROJECT2-page .form-col .recaptchatable {
+	margin-right: 0px !important;
 }
 }
