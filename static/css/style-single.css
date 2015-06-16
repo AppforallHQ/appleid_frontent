@@ -17,7 +17,6 @@
 	-webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
 	box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
-	padding:0 0 20px 0;
 }
 .single-page-body.PROJECT2-page {
 }
@@ -155,6 +154,41 @@
 	list-style: circle inside;
 	color: #777;
 }
+.PROJECT2-page .social-box {
+	overflow: hidden;
+	text-align: center;
+	clear: both;
+	background: #fuserfa;
+	width: 100%;
+	padding: 20px;
+	border-top:1px solid #e0e0e0
+}
+.PROJECT2-page .social-box p {
+	font-size:18px;
+	padding: 0 0 5px 0;
+	font-family:yekan, Arial, tahoma, sans-serif;
+	color:#999;
+}
+.PROJECT2-page .social-box .facebook,
+.PROJECT2-page .social-box .google,
+.PROJECT2-page .social-box .linkedin,
+.PROJECT2-page .social-box .twitter {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	background: url('../images/social-icon2.png') no-repeat;
+	background-position: 0 0;
+}
+.PROJECT2-page .social-box .google {
+	background-position: 0 -48px;
+}
+.PROJECT2-page .social-box .linkedin {
+	background-position: 0 -96px;
+}
+.PROJECT2-page .social-box .twitter {
+	background-position: 0 -144px;
+}
+
 .PROJECT2-page .left-col .psss-info-box {
 	padding:10px;
 	border: 1px solid #e0e0e0;
