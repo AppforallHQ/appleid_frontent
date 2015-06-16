@@ -1,111 +1,49 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>ساخت اپل ایدی | اپفورال</title>
-		<meta name="author" value=" Team">
-		<meta name="robots" content="INDEX,FOLLOW">
-
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-
-		<meta property="og:site_name" content="اپفورال"/>
-		<meta property="og:title" content="دانلود و نصب برنامه‌های آیفون و آیپد | اپفورال"/>
-		<meta property="og:description" content="ساخت اپل ای دی رایگان و سریع" />
-		<meta property="og:url" content="http://www.PROJECT.ir/"/>
-		<meta property="og:type" content="website"/>
-		<meta property="og:image" content="images/af-social.png" />
-
-		<link href="http://www.PROJECT.ir" rel="canonical" />
-		<link href="images/favicon.ico" rel="icon" />
-		<link href="css/style.css" media="all" type="text/css" rel="stylesheet">
-		<link href="css/style-single.css" media="all" type="text/css" rel="stylesheet">
-
-		<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
-		<script src="js/analytics.js"></script>
-		<script src="js/formsubmit.js"></script>
-
-		<script src="https://www.PROJECT.ir/js/script.js"></script>
-		<!--[if lte IE 8]>
-		<script src="https://www.PROJECT.ir/js/html5shiv.js" type="text/javascript"></script>
-		<link href="https://www.PROJECT.ir/css/style-ie.css" media="all" type="text/css" rel="stylesheet">
-		<![endif]-->
-	</head>
-	<body class="single">
-		<header>
-			<div id="headerfull">
-				<div id="head">
-					<a href="/" id="headlogo"></a>
-					<div id="menu-toggle"><span></span></div>
-					<ul id="menu">
-						<li><a href="http://PROJECT.ir/">صفحه نخست</a></li>
-						<li><a href="http://PROJECT.ir/#problem">مشکل چیست؟</a></li>
-						<li><a href="http://PROJECT.ir/#solution">راهکار اپفورال</a></li>
-						<li><a href="http://PROJECT.ir/#register">ثبت نام</a></li>
-						<li><a href="http://PROJECT.ir/#appsvitrine">برنامه‌های موجود</a></li>
-						<li><a href="http://PROJECT.ir/#newsletter">تماس بگیرید</a></li>
-						<li><a target="_blank" href="http://PROJECT.ir/blog/">اپلاگ</a></li>
-						<li><a href="http://PROJECT.ir/panel/login/">ورود کاربران</a></li>
-					</ul>
-				</div>
+{% extends "base.html" %}
+{% block scripts %}
+<script src="js/formsubmit.js"></script>
+{% endblock %}
+{% block body %}
+<div class="page-body">
+	<h2>کاربر گرامی<br>برای دریافت Apple ID خود، فرم زیر را پر کرده و برای ما ارسال کنید. تا دقایقی دیگر اطلاعات Apple ID به ایمیل شما ارسال خواهد شد.</h2>
+	<section class="form-col">
+		<form id="apple_id_req" method="POST" action="/">
+			{{ form.csrf_token }}
+			<div class="row">
+				<div class="slide-error" style="display: none"></div>
+				<div class="slide-success" style="display: none">درخواست شما با موفقیت ثبت شد. به زودی ایمیل حاوی اطلاعات ثبت نام برای شما ارسال خواهد شد.</div>
 			</div>
-			<div class="headerline"></div>
-		</header>
+			<div class="mod-box">
+				<div class="row"><label>ایمیل :</label>{{ form.apple_id(size=20) }}</div>
+				<div class="row"><label>پسورد :</label>{{ form.password() }}</div>
+				<div class="row"><label>تکرار پسورد :</label>{{ form.confirm() }}</div>
+				<div class="row">{{ form.recaptcha }}</div>
+				<div class="row"><input type="submit" class="form-submit" value="ثبت درخواست" disabled="true"></div>
+			</div>
+			<div class="form-loader" id="loader"><span></span></div>
+		</form>
+	</section>
 
-		
-		<section class="content">
-			<section class="single-page-body PROJECT2-page">
-				<div class="page-title">ساخت Apple ID رایگان</div>
-				<div class="page-body">
-					<h2>کاربر گرامی<br>برای دریافت Apple ID خود، فرم زیر را پر کرده و برای ما ارسال کنید. تا دقایقی دیگر اطلاعات Apple ID به ایمیل شما ارسال خواهد شد.</h2>
-					<section class="form-col">
-						<form id="apple_id_req" method="POST" action="/">
-							{{ form.csrf_token }}
-							<div class="row">
-								<div class="slide-error" style="display: none"></div>
-								<div class="slide-success" style="display: none">درخواست شما با موفقیت ثبت شد. به زودی ایمیل حاوی اطلاعات ثبت نام برای شما ارسال خواهد شد.</div>
-							</div>
-							<div class="mod-box">
-								<div class="row"><label>ایمیل :</label>{{ form.apple_id(size=20) }}</div>
-								<div class="row"><label>پسورد :</label>{{ form.password() }}</div>
-								<div class="row"><label>تکرار پسورد :</label>{{ form.confirm() }}</div>
-								<div class="row">{{ form.recaptcha }}</div>
-								<div class="row"><input type="submit" class="form-submit" value="ثبت درخواست" disabled="true"></div>
-							</div>
-							<div class="form-loader" id="loader"><span></span></div>
-						</form>
-					</section>
-
-					<div class="left-col">
-						<fieldset class="psss-info-box">
-							<legend>قوانین اپل برای انتخاب پسورد</legend>
-							<h2>قبل از انتخاب پسورد به نکات زیر توجه کنید:</h2>
-							<ul>
-								<!-- TODO remove once we get different set of rules from DS -->
-								<li id="min_eight_characters" class="">حداقل 8 کاراکتر داشته باشد</li>
-								<!-- TODO remove once we get different set of rules from DS -->
-								<li id="one_lower" class="">حداقل دارای یک حرف کوچک انگلیسی باشد</li>
-								<!-- TODO remove once we get different set of rules from DS -->
-								<li id="one_upper" class="">حداقل دارای یک حرف بزرگ انگلیسی باشد</li>
-								<!-- TODO remove once we get different set of rules from DS -->
-								<li id="one_number" class="">حداقل دارای یک عدد باشد</li>
-								<!-- TODO remove once we get different set of rules from DS -->
-								<li id="three_indentical" class="">نباید بیش از دو حرف یکسان متوالی داشته باشد</li>
-								<!-- TODO remove once we get different set of rules from DS -->
-								<li id="passwords_must_match" class="">همانند نام اپل آی دی نباشد</li>
-								<!-- TODO remove once we get different set of rules from DS -->
-								<li id="common_password" class="">جزء رمز‌های معروف نباشد</li>
-							</ul>
-						</fieldset>
-					</div><!--left-col-->
-				</div>
-			</section>
-		</section>
-
-		</section><!--single-page-body-->
-		<div class="single-copyright">ساخته شده با<span></span>در تهران</div>
-		<script type="text/javascript">
-		</script>
-	</body>
-</html>
+	<div class="left-col">
+		<fieldset class="psss-info-box">
+			<legend>قوانین اپل برای انتخاب پسورد</legend>
+			<h2>قبل از انتخاب پسورد به نکات زیر توجه کنید:</h2>
+			<ul>
+				<!-- TODO remove once we get different set of rules from DS -->
+				<li id="min_eight_characters" class="">حداقل 8 کاراکتر داشته باشد</li>
+				<!-- TODO remove once we get different set of rules from DS -->
+				<li id="one_lower" class="">حداقل دارای یک حرف کوچک انگلیسی باشد</li>
+				<!-- TODO remove once we get different set of rules from DS -->
+				<li id="one_upper" class="">حداقل دارای یک حرف بزرگ انگلیسی باشد</li>
+				<!-- TODO remove once we get different set of rules from DS -->
+				<li id="one_number" class="">حداقل دارای یک عدد باشد</li>
+				<!-- TODO remove once we get different set of rules from DS -->
+				<li id="three_indentical" class="">نباید بیش از دو حرف یکسان متوالی داشته باشد</li>
+				<!-- TODO remove once we get different set of rules from DS -->
+				<li id="passwords_must_match" class="">همانند نام اپل آی دی نباشد</li>
+				<!-- TODO remove once we get different set of rules from DS -->
+				<li id="common_password" class="">جزء رمز‌های معروف نباشد</li>
+			</ul>
+		</fieldset>
+	</div><!--left-col-->
+</div>
+{% endblock %}

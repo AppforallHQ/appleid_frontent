@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block scripts %}
+<script src="js/earlypagehandler.js"></script>
+{% endblock %}
+{% block body %}
+<div class="page-body">
+	<h2>کاربر گرامی<br> سرویس Apple ID اپفورال در حال حاضر در دسترس نمی‌باشد.</h2>
+	<section class="form-col">
+		<form id="apple_id_req" method="POST" action="/">
+			{{ form.csrf_token }}
+			<div class="row">
+				<div class="slide-error" style="display: none"></div>
+				<div class="slide-success" style="display: none"></div>
+			</div>
+			<div class="mod-box">
+				<div class="row"><label>ایمیل :</label>{{ form.email(size=20) }}</div>
+				{% if request.args.get('ref_id') %}
+				<input type="hidden" name="ref_id" value="{{ request.args.get('ref_id') }}">
+				{% endif %}
+				<div class="row"><input type="submit" class="form-submit" value="ثبت درخواست" disabled="true"></div>
+			</div>
+			<div class="form-loader" id="loader"><span></span></div>
+		</form>
+	</section>
+</div>
+{% endblock %}

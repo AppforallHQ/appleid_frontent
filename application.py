@@ -3,7 +3,9 @@
 import os
 import re
 import settings
+import requests
 
+from requests.auth import HTTPBasicAuth
 from datetime import datetime
 from pymongo import MongoClient
 from flask import Flask, render_template, request, jsonify
@@ -11,6 +13,10 @@ from wtforms import PasswordField, validators
 from wtforms.fields.html5 import EmailField
 from flask.ext.wtf import Form
 from flask.ext.wtf.recaptcha import RecaptchaField
+
+# values can be either 'earlypage' or 'register'
+PAGE_STATE = "earlypage"
+#PAGE_STATE = "register"
 
 dbcon = MongoClient(settings.MONGODB_HOST, settings.MONGODB_PORT)
 idgen = dbcon['idgen']
@@ -23,6 +29,8 @@ app.config['RECAPTCHA_PUBLIC_KEY'] = "RECAPTCH_PUBLIC_KEY"
 app.config['RECAPTCHA_PRIVATE_KEY'] = "RECAPTCH_PRIVATE_KEY"
 app.config['RECAPTCHA_PARAMETERS'] = {'hl': 'fa'}
 
+earlypage_endpoint = 'http://PROJECT2.146.185.147.237.xip.io:3000/api/{}'
+earlypage_auth = HTTPBasicAuth('PROJECT2_user', 'somesecurepass')==> 
 # How many times an IP address can send request
 REQ_LIMIT = 3
 
@@ -69,9 +77,32 @@ class Registration(Form):
     confirm = PasswordField('Confirm: ', [password_validator])
     recaptcha = RecaptchaField()
 
+class Earlypage(Form):
+    email = EmailField('Email address: ', [email_validator])
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
+def earlypage_view():
+    form = Earlypage()
+    if request.method == 'POST':
+        email = form.data['email']
+
+        endpoint = earlypage_endpoint.format('welcome')
+        params = {'email': email,
+                  'share_url': 'http://id.PROJECT.ir/?ref_id={{ref_id}}'}
+
+        if 'ref_id' in form.data:
+            params['referrer'] = form.data['ref_id']
+
+        res = requests.get(endpoint, auth=earlypage_auth, params=params)
+
+        if res.status_code == 200:
+            res = res.json()
+            return jsonify(done=True, share=res['share_url'], ql=res['queue_length'])
+        else:
+            return jsonify(done=False)
+
+    return render_template('earlypage.html', form=form)
+
+def defautl_view():
     form = Registration()
     if request.method == 'POST':
         # Check IP to limit requests
@@ -107,5 +138,14 @@ def index():
             return jsonify(done=False, error="اطلاعات وارد شده برای درخواست نامعتبر است.")
     return render_template('index.html', form=form)
 
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if PAGE_STATE == 'earlypage':
+        return earlypage_view()
+    else:
+        return defautl_view()
+
 if __name__ == '__main__':
     app.run()
+    
