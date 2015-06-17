@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import os
 import re
 import settings
@@ -14,9 +13,8 @@ from wtforms.fields.html5 import EmailField
 from flask.ext.wtf import Form
 from flask.ext.wtf.recaptcha import RecaptchaField
 
-# values can be either 'earlypage' or 'register'
-PAGE_STATE = "earlypage"
-#PAGE_STATE = "register"
+# Set it to True if you want to set earlypage
+EARLY_PAGE = False
 
 dbcon = MongoClient(settings.MONGODB_HOST, settings.MONGODB_PORT)
 idgen = dbcon['idgen']
@@ -141,7 +139,7 @@ def defautl_view():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if PAGE_STATE == 'earlypage':
+    if EARLY_PAGE == True
         return earlypage_view()
     else:
         return defautl_view()
