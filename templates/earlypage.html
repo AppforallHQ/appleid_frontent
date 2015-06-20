@@ -4,8 +4,9 @@
 {% endblock %}
 {% block body %}
 <div class="page-body">
-	<h2>کاربر گرامی<br> سرویس Apple ID اپفورال در حال حاضر در دسترس نمی‌باشد.</h2>
-	<section class="form-col">
+	<section class="earlypage-box">
+		<h2>کاربر گرامی، سرویس Apple ID اپفورال در حال حاضر در دسترس نمی‌باشد.</h2>
+		<h2>در صورت تمایل ایمیل خود را وارد کنید تا در زمان حل مشکل شما را از طریق ایمیل با خبر کنیم.</h2>
 		<form id="apple_id_req" method="POST" action="/">
 			{{ form.csrf_token }}
 			<div class="row">
@@ -13,11 +14,10 @@
 				<div class="slide-success" style="display: none"></div>
 			</div>
 			<div class="mod-box">
-				<div class="row"><label>ایمیل :</label>{{ form.email(size=20) }}</div>
+				<div class="mail-box">{{ form.email(size=20) }}<input type="submit" class="submit" value="خبرم کن" disabled="true"></div>
 				{% if request.args.get('ref_id') %}
 				<input type="hidden" name="ref_id" value="{{ request.args.get('ref_id') }}">
 				{% endif %}
-				<div class="row"><input type="submit" class="form-submit" value="ثبت درخواست" disabled="true"></div>
 			</div>
 			<div class="form-loader" id="loader"><span></span></div>
 		</form>

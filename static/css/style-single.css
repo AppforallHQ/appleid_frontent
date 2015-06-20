@@ -88,7 +88,7 @@
 .PROJECT2-page .mod-box input[type=text]:focus,
 .PROJECT2-page .mod-box input[type=password]:focus,
 .PROJECT2-page .mod-box input[type=email]:focus {
-	border:1px solid #03F;
+	border:1px solid #007aff;
 	-webkit-box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.1);
 	box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.1);
@@ -293,8 +293,100 @@
   -ms-border-radius:     8px;
   border-radius:         8px;
 }
+.PROJECT2-page .earlypage-box {
+	margin: 10px 0;
+}
+.PROJECT2-page .earlypage-box .mail-box {
+	margin: 30px auto 60px auto;
+	overflow: hidden;
+	text-align: center;
+	width: 454px;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=email] {
+	max-width: none;
+	display: block;
+	width: 300px;
+	float: left;
+	-webkit-border-radius: 6px;
+	-webkit-border-top-right-radius: 0px;
+	-webkit-border-bottom-right-radius: 0px;
+	-moz-border-radius: 6px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 0px;
+	border-radius: 6px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	padding: 0 10px;
+	height: 45px;
+	line-height: 44px;
+	font-size: 16px;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=email]::-webkit-input-placeholder {
+	font-family:roya, Arial, Helvetica, sans-serif;
+	direction:rtl;
+	text-align: right;
+	line-height: 44px;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=email]:focus::-webkit-input-placeholder {
+	color:#ccc;
+}
 
-
+.PROJECT2-page .earlypage-box .mail-box input[type=email]:-moz-placeholder { /* Firefox 18- */
+	font-family:roya, Arial, Helvetica, sans-serif;
+	direction:rtl;
+	text-align: right;
+	line-height: 44px;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=email]:focus:-moz-placeholder {
+	color:#ccc;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=email]::-moz-placeholder {  /* Firefox 19+ */
+	font-family:roya, Arial, Helvetica, sans-serif;
+	direction:rtl;
+	text-align: right;
+	line-height: 44px;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=email]:focus::-moz-placeholder {
+	color:#ccc;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=email]:-ms-input-placeholder {
+	font-family:roya, Arial, Helvetica, sans-serif;
+	direction:rtl;
+	text-align: right;
+	line-height: 44px;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=email]:-ms-input-placeholder {
+	color:#ccc;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=submit] {
+	max-width: none;
+	display: block;
+	float: left;
+	width: 150px;
+	height: 45px;
+	line-height: 44px;
+	color:#fff;
+	line-height:130%;
+	font-family:yekan, Tahoma, Geneva, sans-serif;
+	font-size:18px;
+	text-align:center;
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-moz-border-radius-topright: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	-webkit-transition: 100ms all linear;
+  -moz-transition:    100ms all linear;
+  transition:         100ms all linear;
+	cursor:pointer;
+	background:#007aff;
+	border: 1px solid #007aff;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=submit]:hover {
+	background:#1c89ff;
+	border: 1px solid #1c89ff;
+}
 
 
 
@@ -349,5 +441,30 @@
 }
 .PROJECT2-page .form-col .recaptchatable {
 	margin-right: 0px !important;
+}
+.PROJECT2-page .earlypage-box .mail-box {
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	margin-bottom: 60px;
+	width: 100%;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=email] {
+	max-width: none;
+	display: block;
+	width: 100%;
+	float: right;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	margin-bottom: 20px;
+}
+.PROJECT2-page .earlypage-box .mail-box input[type=submit] {
+	max-width: none;
+	float: right;
+	width: 100%;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
 }
 }
