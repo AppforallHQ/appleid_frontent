@@ -14,7 +14,7 @@ from flask.ext.wtf import Form
 from flask.ext.wtf.recaptcha import RecaptchaField
 
 # Set it to True if you want to set earlypage
-EARLY_PAGE = False
+EARLY_PAGE = True
 
 dbcon = MongoClient(settings.MONGODB_HOST, settings.MONGODB_PORT)
 idgen = dbcon['idgen']
@@ -139,7 +139,7 @@ def defautl_view():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if EARLY_PAGE == True
+    if EARLY_PAGE == True:
         return earlypage_view()
     else:
         return defautl_view()
