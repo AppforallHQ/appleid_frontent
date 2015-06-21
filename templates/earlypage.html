@@ -14,10 +14,14 @@
 				<div class="slide-success" style="display: none"></div>
 			</div>
 			<div class="mod-box">
-				<div class="mail-box">{{ form.email(size=20) }}<input type="submit" class="submit" value="خبرم کن" disabled="true"></div>
-				{% if request.args.get('ref_id') %}
-				<input type="hidden" name="ref_id" value="{{ request.args.get('ref_id') }}">
-				{% endif %}
+				<div class="mail-box">
+					{{ form.email(size=20, placeholder="ایمیل شما") }}
+					{% if request.args.get('ref_id') %}
+					<input type="hidden" name="ref_id" value="{{ request.args.get('ref_id') }}">
+					{% endif %}
+					<input type="submit" class="submit" value="خبرم کن" disabled="true">
+				</div>
+				
 			</div>
 			<div class="form-loader" id="loader"><span></span></div>
 		</form>

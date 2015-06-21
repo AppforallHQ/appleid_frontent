@@ -5,9 +5,9 @@ function validateEmail(email) {
 
 var enable_submit = function(email){
     if(validateEmail(email)){
-	$('#apple_id_req .form-submit').attr('disabled', false);
+	$('#apple_id_req .submit').attr('disabled', false);
     } else {
-	$('#apple_id_req .form-submit').attr('disabled', true);
+	$('#apple_id_req .submit').attr('disabled', true);
     }
 };
 
@@ -24,6 +24,27 @@ function error_field(obj){
 function run_loader(){
     $('#loader').fadeIn('');
 }
+
+function form_clean_up(){
+    // Clean up the form
+    $('#email').val('');
+    $('input[name="ref_id"]').val('');
+
+    $('#apple_id_req .submit').attr('disabled', true);
+}
+
+function fadeOutErrorAlert(){
+    setTimeout(function(){
+	$('.slide-error').fadeOut();
+    },5000);
+}
+
+function fadeOutSuccessAlert(){
+    setTimeout(function(){
+	$('.slide-success').fadeOut();
+    },5000);
+}
+
 
 $(document).ready(function(){
     $('#apple_id_req input').keyup(function(){
@@ -57,6 +78,7 @@ $(document).ready(function(){
 		    console.log(response.share);
 		    console.log(response.ql);
 		    $('#loader').fadeOut();
+		    $('.slide-success').html('درخواست شما با موفقیت ثبت شد. در اولین فرصت بعد از رفع مشکل با شما تماس خواهیم گرفت.');
 		    form_clean_up();
 		    $('.slide-success').show();
 		    fadeOutSuccessAlert();
@@ -66,7 +88,6 @@ $(document).ready(function(){
 		    $('.slide-error').show();
 		    fadeOutErrorAlert();
 		}
-		Recaptcha.reload();
 	    },
 	    error: function(response)
 	    {

@@ -14,7 +14,7 @@ from flask.ext.wtf import Form
 from flask.ext.wtf.recaptcha import RecaptchaField
 
 # Set it to True if you want to set earlypage
-EARLY_PAGE = True
+EARLY_PAGE = False
 
 dbcon = MongoClient(settings.MONGODB_HOST, settings.MONGODB_PORT)
 idgen = dbcon['idgen']
