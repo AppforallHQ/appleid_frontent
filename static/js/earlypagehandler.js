@@ -78,7 +78,7 @@ $(document).ready(function(){
 		    console.log(response.share);
 		    console.log(response.ql);
 		    $('#loader').fadeOut();
-		    $('.slide-success').html('درخواست شما با موفقیت ثبت شد. در اولین فرصت بعد از رفع مشکل با شما تماس خواهیم گرفت.');
+		    $('.slide-success').html('درخواست شما با موفقیت ثبت شد..');
 		    form_clean_up();
 		    $('.slide-success').show();
 		    fadeOutSuccessAlert();
