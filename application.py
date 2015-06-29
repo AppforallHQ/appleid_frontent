@@ -115,7 +115,7 @@ def defautl_view():
 
         # Do form validation and submit request
         if form.validate_on_submit():
-            apple_id = form.data['apple_id']
+            apple_id = form.data['apple_id'].lower()
             password = form.data['password']
 
             req_exists = idreq.find_one({'apple_id': apple_id, 'recoverable': 0})
