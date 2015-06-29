@@ -75,6 +75,14 @@
 		</section><!--single-page-body-->
 		<div class="single-copyright">ساخته شده با<span></span>در تهران</div>
 		<script type="text/javascript">
+			$('#pass_in').focus(function() {
+			    $('.psss-info-box').show();
+			    $(document).bind('focusin.psss-info-box click.psss-info-box',function(e) {
+			        if ($(e.target).closest('.psss-info-box, #pass_in').length) return;
+			        $(document).unbind('.psss-info-box');
+			        $('.psss-info-box').hide();
+			    });
+			});
 		</script>
 	</body>
 </html>
