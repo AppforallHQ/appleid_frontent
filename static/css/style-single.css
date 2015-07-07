@@ -380,7 +380,13 @@
 	background:#007aff;
 	border: 1px solid #007aff;
 }
+.PROJECT2-page .earlypage-box .mail-box input[type=submit]:disabled {
+	cursor:default;
+	background:#d0d0d0;
+	border:1px solid #d0d0d0;
+}
 .PROJECT2-page .earlypage-box .mail-box input[type=submit]:hover {
+	color: #fff;
 	background:#1c89ff;
 	border: 1px solid #1c89ff;
 }
