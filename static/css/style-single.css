@@ -21,9 +21,9 @@
 .single-page-body.PROJECT2-page {
 }
 .PROJECT2-page .page-title {
-	font-family:roya, Arial, Helvetica, sans-serif;
-	margin:20px 40px 30px 40px;
-	font-size:2em;
+	font-family:yekan, Arial, Helvetica, sans-serif;
+	margin:30px 40px 30px 40px;
+	font-size:28px;
 	padding-bottom:10px;
 	color:#555;
 	border-bottom:1px solid #e0e0e0
@@ -34,7 +34,7 @@
 	position: relative;
 }
 .PROJECT2-page h2 {
-	font-size:1.125em;
+	font-size:20px;
 	font-family:roya, Arial, tahoma, sans-serif;
 	color:#444;
 }
@@ -449,6 +449,90 @@
 	color:#555;
 }
 
+
+
+
+.top-banner {
+	background:#fff url(../images/bg.png) no-repeat center;
+	height: 360px;
+	border-bottom: 1px solid #e7e7e7;
+	overflow: hidden;
+}
+.top-banner .right-side {
+	width: 70%;
+	float: right;
+	text-align: center;
+}
+.top-banner .left-side {
+	width: 30%;
+	float: left;
+	overflow: hidden;
+}
+.top-banner .iphone-img {
+	display: block;
+	width: 220px;
+	height:450px;
+	background:url(../images/iphone.png) no-repeat center;
+	margin: 100px 0 0 0;
+	float: right;
+	-webkit-transition: 100ms all linear;
+	-moz-transition:    100ms all linear;
+	transition:         100ms all linear;
+}
+.top-banner .iphone-img:hover {
+	margin: 80px 0 0 0;
+}
+.top-banner h1 {
+	font-size:32px;
+	font-family:yekan, Arial, tahoma, sans-serif;
+	color: #26627f;
+	text-align: center;
+	margin: 130px 10px 0 10px;
+}
+.top-banner .link-PROJECT  {
+	background: #3090e9; /* Old browsers */
+	background: -moz-linear-gradient(top, #3090e9 0%, #2888e0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3090e9), color-stop(100%,#2888e0)); /* Chrome,Suserri4+ */
+	background: -webkit-linear-gradient(top, #3090e9 0%,#2888e0 100%); /* Chrome10+,Suserri5.1+ */
+	background: -o-linear-gradient(top, #3090e9 0%,#2888e0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3090e9 0%,#2888e0 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #3090e9 0%,#2888e0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3090e9', endColorstr='#2888e0',GradientType=0 ); /* IE6-9 */
+	display: inline-block;
+	border:none;
+	-webkit-border-radius: 6px;
+	-moz-border-radius:    6px;
+	-ms-border-radius:     6px;
+	border-radius:         6px;
+	font-family:yekan, Tahoma, Geneva, sans-serif;
+	font-size:22px;
+	color: #fff;
+	padding: 0 50px;
+	line-height: 50px;
+	height: 50px;
+	margin: 30px 10px 10px 10px;
+	-webkit-box-shadow: 0 2px 1px 0px rgba(0, 0, 0, 0.06);
+	-moz-box-shadow:    0 2px 1px 0px rgba(0, 0, 0, 0.06);
+	box-shadow:         0 2px 1px 0px rgba(0, 0, 0, 0.06);
+	-webkit-transition: 100ms all linear;
+	-moz-transition:    100ms all linear;
+	transition:         100ms all linear;
+	cursor: pointer;
+}
+.top-banner .link-PROJECT:hover {
+	-webkit-box-shadow: 0 2px 0 0px #fff;
+	-moz-box-shadow:    0 2px 0 0px #fff;
+	box-shadow:         0 2px 0 0px #fff;
+	background: #3090e9; /* Old browsers */
+	background: -moz-linear-gradient(top, #2888e0 0%, #3090e9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2888e0), color-stop(100%,#3090e9)); /* Chrome,Suserri4+ */
+	background: -webkit-linear-gradient(top, #2888e0 0%,#3090e9 100%); /* Chrome10+,Suserri5.1+ */
+	background: -o-linear-gradient(top, #2888e0 0%,#3090e9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #2888e0 0%,#3090e9 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #2888e0 0%,#3090e9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2888e0', endColorstr='#3090e9',GradientType=0 ); /* IE6-9 */
+}
+
 @media (max-width: 960px) {
 .PROJECT2-page .mod-box label {
 	text-align: right;
@@ -481,7 +565,7 @@
 	margin-top:80px;
 }
 .PROJECT2-page .page-title{
-	margin:10px;
+	margin:20px;
 	text-align:center;
 }
 .PROJECT2-page .form-submit {
@@ -519,5 +603,25 @@
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
+}
+.top-banner {
+	height: auto;
+}
+.top-banner .right-side {
+	width: 100%;
+	float: none;
+}
+.top-banner .left-side {
+	display: none;
+}
+.top-banner h1 {
+	font-size:32px;
+	font-family:yekan, Arial, tahoma, sans-serif;
+	color: #26627f;
+	text-align: center;
+	margin: 10% 10px 0 10px;
+}
+.top-banner .link-PROJECT  {
+	margin-bottom: 7%;
 }
 }
