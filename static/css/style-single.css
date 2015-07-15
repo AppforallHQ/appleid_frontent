@@ -562,7 +562,7 @@
 .PROJECT2-page {
 	padding:0;
 	padding-bottom:20px;
-	margin-top:80px;
+	margin-top:60px;
 }
 .PROJECT2-page .page-title{
 	margin:20px;
@@ -615,13 +615,14 @@
 	display: none;
 }
 .top-banner h1 {
-	font-size:32px;
-	font-family:yekan, Arial, tahoma, sans-serif;
-	color: #26627f;
-	text-align: center;
-	margin: 10% 10px 0 10px;
+	font-size:22px;
+	margin: 3% 10px 0 10px;
 }
 .top-banner .link-PROJECT  {
-	margin-bottom: 7%;
+	margin: 20px 10px 6% 10px;
+	font-size: 18px;
+	padding: 0 50px;
+	line-height: 36px;
+	height: 36px;
 }
 }
