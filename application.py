@@ -27,7 +27,7 @@ app.config['RECAPTCHA_PUBLIC_KEY'] = "RECAPTCH_PUBLIC_KEY"
 app.config['RECAPTCHA_PRIVATE_KEY'] = "RECAPTCH_PRIVATE_KEY"
 app.config['RECAPTCHA_PARAMETERS'] = {'hl': 'fa'}
 
-earlypage_endpoint = 'http://PROJECT2.146.185.147.237.xip.io:3000/api/{}'
+earlypage_endpoint = 'http://EARLYPAGE_ENDPOINT{}'
 earlypage_auth = HTTPBasicAuth('PROJECT2_user', 'somesecurepass')==> 
 # How many times an IP address can send request
 REQ_LIMIT = 3
