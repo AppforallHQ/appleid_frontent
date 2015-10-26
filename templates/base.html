@@ -1,94 +1,162 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		{% block head %}
-		<meta charset="UTF-8">
-		<title>ساخت اپل ایدی | اپفورال</title>
-    <meta name="description" content="ساخت اپل ای دی رایگان و سریع در اپفورال" />
-		<meta name="robots" content="INDEX,FOLLOW">
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <meta property="og:title" content="ساخت اپل ایدی | اپفورال"/>
-    <meta property="og:description" content="ساخت اپل ای دی رایگان و سریع در اپفورال" />
-    <meta property="og:locale" content="fa_IR" />
-		<meta property="og:site_name" content="اپفورال"/>
-		<meta property="og:url" content="http://id.PROJECT.ir/"/>
-		<meta property="og:type" content="website"/>
-		<meta property="og:image" content="http://PROJECT.bitbucket.org/PROJECT2-social-icon.png" />
-		<link href="images/favicon.ico" rel="icon" />
-		<link href="css/style.css" media="all" type="text/css" rel="stylesheet">
-		<link href="css/style-single.css" media="all" type="text/css" rel="stylesheet">
-    <script src="//cdn.optimizely.com/js/3708470141.js"></script>
-		<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
-		<script src="js/analytics.js"></script>
-		{% block scripts %}
-		{% endblock scripts %}
+<head>
+	{% block head %}
+	<meta charset="UTF-8">
+	<title>ساخت اپل ایدی | اپفورال</title>
+	<meta name="author" value=" Team">
+	<meta name="robots" content="INDEX,FOLLOW">
 
-		<script src="js/script.js"></script>
-		<!--[if lte IE 8]>
-		<script src="https://www.PROJECT.ir/js/html5shiv.js" type="text/javascript"></script>
-		<link href="https://www.PROJECT.ir/css/style-ie.css" media="all" type="text/css" rel="stylesheet">
-		<![endif]-->
-		{% endblock %}
-	</head>
-	<body class="single">
-		<header>
-			<div id="headerfull">
-				<div id="head">
-					<a href="/" id="headlogo"></a>
-					<div id="menu-toggle"><span></span></div>
-					<ul id="menu">
-						<li><a target="_blank" href="http://PROJECT.ir/">صفحه نخست</a></li>
-						<li><a target="_blank" href="http://PROJECT.ir/#problem">مشکل چیست؟</a></li>
-						<li><a target="_blank" href="http://PROJECT.ir/#solution">راهکار اپفورال</a></li>
-						<li><a target="_blank" href="http://PROJECT.ir/#register">ثبت نام</a></li>
-						<li><a target="_blank" href="http://PROJECT.ir/#appsvitrine">برنامه‌های موجود</a></li>
-						<li><a target="_blank" href="http://PROJECT.ir/#newsletter">تماس بگیرید</a></li>
-						<li><a target="_blank" href="http://PROJECT.ir/blog/">اپلاگ</a></li>
-						<li><a target="_blank" href="http://PROJECT.ir/panel/login/">ورود کاربران</a></li>
-					</ul>
-				</div>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta property="og:site_name" content="اپفورال"/>
+	<meta property="og:title" content="دانلود و نصب برنامه‌های آیفون و آیپد | اپفورال"/>
+	<meta property="og:description" content="ساخت اپل ای دی رایگان و سریع" />
+	<meta property="og:url" content="http://www.PROJECT.ir/"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:image" content="images/af-social.png" />
+
+	<link href="http://www.PROJECT.ir" rel="canonical" />
+	<link href="images/favicon.ico" rel="icon" />
+	<link href="../static/css/main.css" media="all" type="text/css" rel="stylesheet">
+	<link href="css/idstyle.css" media="all" type="text/css" rel="stylesheet">
+	<script src="//cdn.optimizely.com/js/3708470141.js"></script>
+	<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+	<script src="js/analytics.js"></script>
+	{% block scripts %}
+	{% endblock scripts %}
+	<script src="js/script.js"></script>
+	{% endblock %}
+</head>
+<body>
+<header class="page-header">
+	<section class="page-top-menu">
+		<section class="container">
+			<div class="menu-toggle" id="menu_toggle"></div>
+			<div class="user-menu">
+				<div class="login-button" id="login_button">پنل کاربران<i></i></div>
+				<a href="#" class="userislogin" style="display:none">
+					<img class="user-avatar" src="static/pic/3.jpg">
+					<span>ورود به پنل</span>
+				</a>
 			</div>
-			<div class="headerline"></div>
-		</header>
-
-		
-		<section class="content">
-			<section class="single-page-body PROJECT2-page">
-
-				<div class="top-banner">
-					<div class="left-side">
-						<a target="_blank" href="https://www.PROJECT.ir/#register" class="iphone-img"></a>
-					</div>
-					<div class="right-side">
-						<h1>دسترسی به بیش از 12 هزار برنامه<br> آیفون و آیپد در اپفورال</h1>
-						<a target="_blank" class="link-PROJECT" href="https://www.PROJECT.ir/#register">نصب اپفورال</a>
+			<a href="#" class="head-logo-link">خانه</a>
+			<div class="head-logo"></div>
+			<nav class="menu-nav" id="menu_nav">
+				<ul>
+					<li class="home"><a href="#">خانه</a></li>
+					<li><a href="#">امکانات</a></li>
+					<li><a href="#">برنامه‌های موجود</a></li>
+					<li><a href="#">ساخت اپل ای‌دی رایگان</a></li>
+					<li><a href="#">وبلاگ</a></li>
+					<li><a href="#">تماس با ما</a></li>
+				</ul>
+			</nav>
+		</section>
+	</section>
+	<div class="menu-darkbg" id="menu_darkbg"></div>
+</header><!--page-header-->
+<main class="PROJECT2-page">
+	<div class="PROJECT-intro fa">
+		<div class="movebg">
+			<section class="container">
+				<div class="col-1-7 floatleft">
+					<div class="text-box">
+						<h1><span>دانلود رایگان و نامحدود</span> بیش از 12.000 برنامه آیفون و آیپد</h1>
+						<div class="and">و</div>
+						<h1>خرید ریالی تمام برنامه‌های اپ استور آمریکا</h1>
+						<a href="#download" class="download-button">
+							<span>نصب رایگان اپفورال</span><i></i>
+						</a>
 					</div>
 				</div>
-
-				
-				<div class="page-title">ساخت Apple ID رایگان</div>
-				{% block body %}{% endblock %}
-				<div class="social-box">
-					<p>ساخت اپل ایدی رایگان رو به دوستان خود معرفی کنید</p>
-					<a href="#" class="facebook" onClick="MyWindow=window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fid.PROJECT.ir%2F&t=%D8%A8%D9%88%D8%B3%DB%8C%D9%84%D9%87%20%D8%A7%D9%BE%D9%81%D9%88%D8%B1%D8%A7%D9%84%D8%8C%20Apple%20ID%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D8%A8%D8%B3%D8%A7%D8%B2%DB%8C%D8%AF%20%3A)','MyWindow','toolbar=no,width=600,height=400'); return false;"></a>
-					<a href="#" class="google" onClick="MyWindow=window.open('https://plus.google.com/share?url=http%3A%2F%2Fid.PROJECT.ir%2F','MyWindow','toolbar=no,width=600,height=400'); return false;"></a>
-					<a href="#" class="linkedin" onClick="MyWindow=window.open('http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fid.PROJECT.ir%2F&title=%D8%B3%D8%A7%D8%AE%D8%AA%20Apple%20ID%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D8%AF%D8%B1%20%D8%A7%D9%BE%D9%81%D9%88%D8%B1%D8%A7%D9%84&summary=%D8%A8%D9%88%D8%B3%DB%8C%D9%84%D9%87%20%D8%A7%D9%BE%D9%81%D9%88%D8%B1%D8%A7%D9%84%D8%8C%20Apple%20ID%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D8%A8%D8%B3%D8%A7%D8%B2%DB%8C%D8%AF%20%3A)&source=http%3A%2F%2Fid.PROJECT.ir%2F','MyWindow','toolbar=no,width=600,height=400'); return false;"></a>
-					<a href="#" class="twitter" onClick="MyWindow=window.open('https://twitter.com/intent/tweet?source=http%3A%2F%2Fid.PROJECT.ir%2F&text=%D8%A8%D9%88%D8%B3%DB%8C%D9%84%D9%87%20%D8%A7%D9%BE%D9%81%D9%88%D8%B1%D8%A7%D9%84%D8%8C%20Apple%20ID%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D8%A8%D8%B3%D8%A7%D8%B2%DB%8C%D8%AF%20%3A):%20http%3A%2F%2Fid.PROJECT.ir%2F&via=PROJECTHQ','MyWindow','toolbar=no,width=600,height=400'); return false;"></a>
+				<div class="col-1-5 floatright">
+					<div class="iphone-img"></div>
 				</div>
 			</section>
+			<div class="box-shadow"></div>
+		</div>
+	</div>
+	<section class="container">
+		<section class="PROJECT2-body">
+				<div class="page-title">ساخت Apple ID رایگان</div>
+				{% block body %}{% endblock %}
 		</section>
+	</section>
+</main>
 
-		</section><!--single-page-body-->
-		<div class="single-copyright">ساخته شده با<span></span>در تهران</div>
-		<script type="text/javascript">
-			$('#password').focus(function() {
-			    $('.psss-info-box').show();
-			    $(document).bind('focusin.psss-info-box click.psss-info-box',function(e) {
-			        if ($(e.target).closest('.psss-info-box, #password').length) return;
-			        $(document).unbind('.psss-info-box');
-			        $('.psss-info-box').hide();
-			    });
-			});
-		</script>
-	</body>
+<footer class="page-footer fa">
+	<section class="container">
+		<div class="row">
+			<div class="col-1-2 footer-link1">
+				<nav class="footer-box">
+					<ul>
+						<li><a href="#">صفحه نخست</a></li>
+						<li><a href="#">برنامه های موجود</a></li>
+						<li><a href="#">امکانات</a></li>
+						<li><a href="#">وبلاگ</a></li>
+						<li><a href="#">ساخت Apple ID رایگان</a></li>
+					</ul>
+				</nav>
+			</div><!--footer-link1-->
+			<div class="col-1-2 footer-link2">
+				<nav class="footer-box">
+					<ul>
+						<li><a href="#">سوالات متداول</a></li>
+						<li><a href="#">قوانین و مقررات</a></li>
+						<li><a href="#">تماس با ما</a></li>
+						<li><a href="#">برنامه Backup گیری اپفورال</a></li>
+						<li><a href="#">وضیعت سرورهای اپفورال</a></li>
+					</ul>
+				</nav>
+			</div><!--footer-link2-->
+			<div class="col-1-5 footer-newsletter">
+				<div class="footer-box">
+					<div class="box-title">خبرنامه</div>
+					<p class="newsletter-text">معرفی جدیدترین و بهترین برنامه های <i>ios</i> و اخبار برنامه های آیفون و آیپد هر هفته در ایمیل شما</p>
+					<div class="newsletter-box" style="display">
+						<input type="mail" placeholder="ایمیل خود را وارد کنید" class="input newsletter-input">
+						<input type="submit" value="عضویت" class="ibtn newsletter-submit">
+					</div>
+					<div class="loader-box" style="display:none">
+					لطفا چند لحظه صبر کنید...
+					</div>
+					<div class="success" style="display:none">
+					شما در خبرنامه اپفورال عضو شدید :)
+					</div>
+				</div>
+			</div><!--footer-newsletter-->
+			<div class="col-1-3 footer-social">
+				<div class="footer-box lefty">
+					<div class="box-title">اپفورال در شبکه های اجتماعی</div>
+					<div class="social-box">
+						<a href="#" class="social-icon facebook"></a>
+						<a href="#" class="social-icon twitter"></a>
+						<a href="#" class="social-icon instagram"></a>
+						<a href="#" class="social-icon telegram"></a>
+					</div>
+				</div>
+			</div><!--footer-social-->
+		</div>
+	</section><!--container-->
+	<section class="footer-bottom">
+		<p>تمامی خدمات این سایت، حسب مورد دارای مجوزهای لازم از مراجع مربوطه می‌باشند و فعالیت‌های این سایت تابع قوانین و مقررات جمهوری اسلامی ایران است.</p>
+		<p class="i-love-PROJECT">
+			ساخته شده با <i class="hearth"></i> در ایران
+		</p>
+	</section><!--footer-bottom-->
+</footer>
+<script type="text/javascript">
+	$('#pass_in').focus(function() {
+	    $('.psss-info-box').show();
+	    $(document).bind('focusin.psss-info-box click.psss-info-box',function(e) {
+	        if ($(e.target).closest('.psss-info-box, #pass_in').length) return;
+	        $(document).unbind('.psss-info-box');
+	        $('.psss-info-box').hide();
+	    });
+	});
+</script>
+</body>
 </html>

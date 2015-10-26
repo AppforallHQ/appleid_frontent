@@ -9,21 +9,20 @@
 		<h2>در صورت تمایل با استفاده از فرم زیر ایمیل خود را ثبت کنید تا از فعال شدن مجدد ثبت نام مطلع شوید.</h2>
 		<form id="apple_id_req" method="POST" action="/">
 			{{ form.csrf_token }}
-			<div class="row">
-				<div class="slide-error" style="display: none"></div>
-				<div class="slide-success" style="display: none"></div>
-			</div>
 			<div class="mod-box">
+				<div class="row">
+					<div class="slide-error" style="display: none"></div>
+					<div class="slide-success" style="display: none"></div>
+				</div>
 				<div class="mail-box">
 					{{ form.email(size=20, placeholder="ایمیل شما") }}
 					{% if request.args.get('ref_id') %}
 					<input type="hidden" name="ref_id" value="{{ request.args.get('ref_id') }}">
 					{% endif %}
-					<input type="submit" class="submit" value="خبرم کن" disabled="true">
+					<input type="submit" class="ibtn submit" value="خبرم کن" disabled="true">
 				</div>
-				
 			</div>
-			<div class="form-loader" id="loader"><span></span></div>
+			<div class="the-loader" id="loader"><span></span></div>
 		</form>
 	</section>
 </div>

@@ -8,32 +8,41 @@
 	<section class="form-col">
 		<form id="apple_id_req" method="POST" action="/">
 			{{ form.csrf_token }}
-
-			<div class="psss-info-box">
-				<div class="psss-info">
-					<h2>قوانین اپل برای انتخاب پسورد</h2>
-					<ul>
-						<li><span>حداقل 8 کاراکتر داشته باشد</span></li>
-						<li><span>ترکیبی از حروف کوچک و بزرگ انگلیسی باشد</span></li>
-						<li><span>نباید بیش از دو حرف یکسان متوالی داشته باشد</span></li>
-						<li><span>همانند نام اپل آی دی نباشد</span></li>
-						<li><span>جزء رمز‌های معروف نباشد</span></li>
-					</ul>
-				</div>
-			</div>
-
 			<div class="row">
 				<div class="slide-error" style="display: none"></div>
 				<div class="slide-success" style="display: none">درخواست شما با موفقیت ثبت شد. به زودی ایمیل حاوی اطلاعات ثبت نام برای شما ارسال خواهد شد.</div>
 			</div>
 			<div class="mod-box">
-				<div class="row"><label>ایمیل شما:</label>{{ form.apple_id(size=20) }}</div>
-				<div class="row"><label>پسورد انتخابی:</label>{{ form.password() }}</div>
-				<div class="row"><label>تکرار پسورد :</label>{{ form.confirm() }}</div>
+				<div class="psss-info-box">
+					<div class="psss-info">
+						<h2>قوانین اپل برای انتخاب پسورد</h2>
+						<ul>
+							<li>حداقل 8 کاراکتر داشته باشد</li>
+							<li>ترکیبی از حروف کوچک و بزرگ انگلیسی باشد/li>
+							<li>نباید بیش از دو حرف یکسان متوالی داشته باشد</li>
+							<li>همانند نام اپل آی دی نباشد</li>
+							<li>جزء رمز‌های معروف نباشد</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<label>ایمیل شما:</label>
+					{{ form.apple_id(size=20) }}
+				</div>
+				<div class="row">
+					<label>پسورد انتخابی:</label>
+					{{ form.password() }}
+				</div>
+				<div class="row">
+					<label>تکرار پسورد :</label>
+					{{ form.confirm() }}
+				</div>
 				<div class="row">{{ form.recaptcha }}</div>
-				<div class="row"><input type="submit" class="form-submit" value="ثبت درخواست" disabled="true"></div>
+				<div class="row">
+					<input type="submit" class="ibtn form-submit" value="ثبت درخواست" disabled="true">
+				</div>
 			</div>
-			<div class="form-loader" id="loader"><span></span></div>
+			<div class="the-loader" id="loader"><span></span></div>
 		</form>
 	</section>
 </div>
