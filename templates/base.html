@@ -25,39 +25,18 @@
 	<script src="//cdn.optimizely.com/js/3708470141.js"></script>
 	<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
 	<script src="js/analytics.js"></script>
+  <script src="https://www.PROJECT.ir/static/js/subscription.js"></script>
+  <script src="http://localhost:3000/panel/user.js"></script>
 	{% block scripts %}
 	{% endblock scripts %}
 	<script src="https://www.PROJECT.ir/static/js/script.js"></script>
 	{% endblock %}
 </head>
 <body>
-<header class="page-header">
-	<section class="page-top-menu">
-		<section class="container">
-			<div class="menu-toggle" id="menu_toggle"></div>
-			<div class="user-menu">
-				<div class="login-button" id="login_button">پنل کاربران<i></i></div>
-				<a href="#" class="userislogin" style="display:none">
-					<img class="user-avatar" src="static/pic/3.jpg">
-					<span>ورود به پنل</span>
-				</a>
-			</div>
-			<a href="#" class="head-logo-link">خانه</a>
-			<div class="head-logo"></div>
-			<nav class="menu-nav" id="menu_nav">
-				<ul>
-					<li class="home"><a href="#">خانه</a></li>
-					<li><a href="#">امکانات</a></li>
-					<li><a href="#">برنامه‌های موجود</a></li>
-					<li><a href="#">ساخت اپل ای‌دی رایگان</a></li>
-					<li><a href="#">وبلاگ</a></li>
-					<li><a href="#">تماس با ما</a></li>
-				</ul>
-			</nav>
-		</section>
-	</section>
-	<div class="menu-darkbg" id="menu_darkbg"></div>
-</header><!--page-header-->
+
+{% include "header.html" %}
+{% include "signin_box.html" %}
+
 <main class="PROJECT2-page">
 	<div class="PROJECT-intro fa">
 		<div class="movebg">
@@ -87,67 +66,8 @@
 	</section>
 </main>
 
-<footer class="page-footer fa">
-	<section class="container">
-		<div class="row">
-			<div class="col-1-2 footer-link1">
-				<nav class="footer-box">
-					<ul>
-						<li><a href="#">صفحه نخست</a></li>
-						<li><a href="#">برنامه های موجود</a></li>
-						<li><a href="#">امکانات</a></li>
-						<li><a href="#">وبلاگ</a></li>
-						<li><a href="#">ساخت Apple ID رایگان</a></li>
-					</ul>
-				</nav>
-			</div><!--footer-link1-->
-			<div class="col-1-2 footer-link2">
-				<nav class="footer-box">
-					<ul>
-						<li><a href="#">سوالات متداول</a></li>
-						<li><a href="#">قوانین و مقررات</a></li>
-						<li><a href="#">تماس با ما</a></li>
-						<li><a href="#">برنامه Backup گیری اپفورال</a></li>
-						<li><a href="#">وضیعت سرورهای اپفورال</a></li>
-					</ul>
-				</nav>
-			</div><!--footer-link2-->
-			<div class="col-1-5 footer-newsletter">
-				<div class="footer-box">
-					<div class="box-title">خبرنامه</div>
-					<p class="newsletter-text">معرفی جدیدترین و بهترین برنامه های <i>ios</i> و اخبار برنامه های آیفون و آیپد هر هفته در ایمیل شما</p>
-					<div class="newsletter-box" style="display">
-						<input type="mail" placeholder="ایمیل خود را وارد کنید" class="input newsletter-input">
-						<input type="submit" value="عضویت" class="ibtn newsletter-submit">
-					</div>
-					<div class="loader-box" style="display:none">
-					لطفا چند لحظه صبر کنید...
-					</div>
-					<div class="success" style="display:none">
-					شما در خبرنامه اپفورال عضو شدید :)
-					</div>
-				</div>
-			</div><!--footer-newsletter-->
-			<div class="col-1-3 footer-social">
-				<div class="footer-box lefty">
-					<div class="box-title">اپفورال در شبکه های اجتماعی</div>
-					<div class="social-box">
-						<a href="#" class="social-icon facebook"></a>
-						<a href="#" class="social-icon twitter"></a>
-						<a href="#" class="social-icon instagram"></a>
-						<a href="#" class="social-icon telegram"></a>
-					</div>
-				</div>
-			</div><!--footer-social-->
-		</div>
-	</section><!--container-->
-	<section class="footer-bottom">
-		<p>تمامی خدمات این سایت، حسب مورد دارای مجوزهای لازم از مراجع مربوطه می‌باشند و فعالیت‌های این سایت تابع قوانین و مقررات جمهوری اسلامی ایران است.</p>
-		<p class="i-love-PROJECT">
-			ساخته شده با <i class="hearth"></i> در ایران
-		</p>
-	</section><!--footer-bottom-->
-</footer>
+{% include "footer.html" %}
+
 <script type="text/javascript">
 	$('#pass_in').focus(function() {
 	    $('.psss-info-box').show();
@@ -157,6 +77,18 @@
 	        $('.psss-info-box').hide();
 	    });
 	});
+
+ $(document).ready(function(){
+     $('.text-box a.download-button').on('click', function(e){
+         e.preventDefault();
+
+         if(iDeviceCheck()){
+             window.location = "https://www.PROJECT.ir/help"
+         } else {
+             window.location = "https://www.PROJECT.ir/signup"
+         }
+     })
+ });
 </script>
 </body>
 </html>
