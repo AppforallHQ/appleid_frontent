@@ -8,10 +8,6 @@
 	<section class="form-col">
 		<form id="apple_id_req" method="POST" action="/">
 			{{ form.csrf_token }}
-			<div class="row">
-				<div class="slide-error" style="display: none"></div>
-				<div class="slide-success" style="display: none">درخواست شما با موفقیت ثبت شد. به زودی ایمیل حاوی اطلاعات ثبت نام برای شما ارسال خواهد شد.</div>
-			</div>
 			<div class="mod-box">
 				<div class="psss-info-box">
 					<div class="psss-info">
@@ -38,9 +34,11 @@
 					{{ form.confirm() }}
 				</div>
 				<div class="row">{{ form.recaptcha }}</div>
+				<div class="error" style="display: none">همه موارد خواسته شده را با دقت پر کنید</div>
 				<div class="row">
 					<input type="submit" class="ibtn form-submit" value="ثبت درخواست" disabled="true">
 				</div>
+				<div class="success" style="display: none">درخواست شما با موفقیت ثبت شد. به زودی ایمیل حاوی اطلاعات ثبت نام برای شما ارسال خواهد شد.</div>
 			</div>
 			<div class="the-loader" id="loader"><span></span></div>
 		</form>

@@ -1,4 +1,4 @@
-﻿.@font-face {
+﻿@font-face {
 	font-family: 'IRANSans-web';
 	src:url('../fonts/IRANSans-Light-web.woff') format('woff');  
 	font-weight: 300;
@@ -15,8 +15,7 @@
 	src:url('../fonts/IRANSans-web.woff') format('woff');  
 	font-weight: normal;
 }
-
-PROJECT2-page {
+.PROJECT2-page {
 	background:#fuserfa;
 }
 .PROJECT2-page .PROJECT-intro {
@@ -138,11 +137,7 @@ PROJECT2-page {
   	position: relative;
 	min-height: 300px;
 	max-width: 560px;
-	margin: 0 auto;
-	padding-top: 10px;
-}
-.PROJECT2-body .form-col .mod-box {
-	position: relative;
+	margin: 40px auto;
 }
 .PROJECT2-body .form-col .row {
 	margin-bottom:20px;
@@ -178,6 +173,9 @@ PROJECT2-page {
 	border:0 !important;
 	float: right;
 }
+.PROJECT2-body .form-col .recaptcha_image_cell {
+	background: none !important;
+}
 .PROJECT2-body .form-col #recaptcha_challenge_image {
 	border:1px solid #d8d8d8;
 	width: 320px !important;
@@ -200,8 +198,8 @@ PROJECT2-page {
 }
 .PROJECT2-body .psss-info-box {
 	position: absolute;
-	top: -14px;
-	left: -210px;
+	top: -12px;
+	left: -215px;
 	font-family: 'IRANSans-web', tahoma;
 	font-weight: 300;
 	color:#666;
@@ -255,6 +253,13 @@ PROJECT2-page {
 	border-left-color: #007aff;
 	border-width: 11px;
 	margin-top: -11px;
+}
+.PROJECT2-body div.error,
+.PROJECT2-body div.success {
+	margin: 0 auto 20px auto;
+}
+.PROJECT2-body div.error {
+	width: 300px;
 }
 .PROJECT2-body .form-submit {
 	width: 320px;
