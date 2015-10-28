@@ -66,13 +66,13 @@ function run_loader(){
 
 function fadeOutErrorAlert(){
     setTimeout(function(){
-	$('.slide-error').fadeOut();
+	$('.error').fadeOut();
     },5000);
 }
 
 function fadeOutSuccessAlert(){
     setTimeout(function(){
-	$('.slide-success').fadeOut();
+	$('.success').fadeOut();
     },5000);
 }
 
@@ -138,12 +138,12 @@ $(document).ready(function(){
 		if(response.done == true){
 		    $('#loader').fadeOut();
 		    form_clean_up();
-		    $('.slide-success').show();
+		    $('.success').show();
 		    fadeOutSuccessAlert();
 		} else {
 		    $('#loader').fadeOut();
-		    $('.slide-error').html(response.error);
-		    $('.slide-error').show();
+		    $('.error').html(response.error);
+		    $('.error').show();
 		    fadeOutErrorAlert();
 		}
 		Recaptcha.reload();
@@ -152,8 +152,8 @@ $(document).ready(function(){
 	    error: function(response)
 	    {
 		$('#loader').fadeOut();
-		$('.slide-error').html(response.error);
-		$('.slide-error').show();
+		$('.error').html(response.error);
+		$('.error').show();
 		fadeOutErrorAlert();
 		Recaptcha.reload();
 		// grecaptcha.reset(); // New recaptcha
