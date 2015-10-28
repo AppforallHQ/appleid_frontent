@@ -66,13 +66,13 @@ function run_loader(){
 
 function fadeOutErrorAlert(){
     setTimeout(function(){
-	$('.error').fadeOut();
+	$('div.error').fadeOut();
     },5000);
 }
 
 function fadeOutSuccessAlert(){
     setTimeout(function(){
-	$('.success').fadeOut();
+	$('div.success').fadeOut();
     },5000);
 }
 
