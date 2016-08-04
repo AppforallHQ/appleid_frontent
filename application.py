@@ -30,7 +30,7 @@ app.config[
 app.config['RECAPTCHA_PARAMETERS'] = {'hl': 'fa'}
 
 earlypage_endpoint = 'http://EARLYPAGE_ENDPOINT{}'
-earlypage_auth = HTTPBasicAuth('PROJECT2_user', 'somesecurepass')==>
+earlypage_auth = HTTPBasicAuth('PROJECT2_user', 'somesecurepass')
 # How many times an IP address can send request
 REQ_LIMIT = 3
 
